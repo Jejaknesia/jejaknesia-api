@@ -13,6 +13,11 @@ const getAllRecordsHandler = async (request, h) => {
         data: results
       }).code(200);
 
+      // const response = h.response({
+      //   status: 'success',
+      //   data: results
+      // }).code(200);
+
       resolve(response);
     });
   });
