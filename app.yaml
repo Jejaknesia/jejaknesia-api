@@ -1,2 +1,8 @@
 service: default
 runtime: nodejs18
+
+env_variables:
+  JEJAKNESIA_HOST: "34.101.138.44"
+  JEJAKNESIA_USER: "root"
+  JEJAKNESIA_PASSWORD: "secret123"
+
