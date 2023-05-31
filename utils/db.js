@@ -1,11 +1,13 @@
 const mysql = require('mysql');
+require('dotenv').config();
+
 
 // Konfigurasi koneksi ke database Cloud SQL
 const connection = mysql.createConnection({
-  host: '34.128.72.212', // IP eksternal Cloud SQL
-  user: 'root',
-  password: '202051056',
-  database: 'money-dicoding'
+  host: process.env.JEJAKNESIA_HOST,
+  user: process.env.JEJAKNESIA_USER,
+  password: process.env.JEJAKNESIA_PASSWORD,
+  database: 'jejaknesia_db'
 });
 
 // Membuka koneksi ke database
