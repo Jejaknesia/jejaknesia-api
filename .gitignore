@@ -1,1 +1,2 @@
 post-push.sh
+.env
