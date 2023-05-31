@@ -20,10 +20,10 @@ const getAllRecordsHandler = async (request, h) => {
 };
 
 const registerHandler = async (request, h) => {
-  const { username, password } = request.payload;
+  const { email, password } = request.payload;
   return new Promise((resolve, reject) => {
     connection.query(
-      `INSERT INTO users (username, password) VALUES ('${username}', '${password}')`,
+      `INSERT INTO users (email, password) VALUES ('${email}', '${password}')`,
       (error, results, fields) => {
         if (error) {
           console.error(error);
@@ -42,25 +42,25 @@ const registerHandler = async (request, h) => {
   });
 };
 const loginHandler = async (request, h) => {
-  const { username, password } = request.payload;
+  const { email, password } = request.payload;
 
   // Mencetak input dari user yang sedang login
-  console.log("Username:", username);
+  console.log("email:", email);
   console.log("Password:", password);
 
   return new Promise((resolve, reject) => {
     const authUsers = connection.query(
-      `SELECT * FROM users WHERE username='${username}' AND password='${password}'`,
+      `SELECT * FROM users WHERE email='${email}' AND password='${password}'`,
       (error, results, fields) => {
         if (error) {
           console.error(error);
           reject(error);
         } else if (results.length === 0) {
-          // Jika tidak ada hasil dari query, artinya kombinasi username dan password tidak ditemukan
+          // Jika tidak ada hasil dari query, artinya kombinasi email dan password tidak ditemukan
           const response = h
             .response({
               status: "login failed",
-              message: "Invalid username or password",
+              message: "Invalid email or password",
             })
             .code(401);
           resolve(response);
@@ -77,8 +77,8 @@ const loginHandler = async (request, h) => {
   });
 };
 
-const authUsers = (username, password) => {
-  !username || !password ? false : true;
+const authUsers = (email, password) => {
+  !email || !password ? false : true;
 };
 
 module.exports = { getAllRecordsHandler, registerHandler, loginHandler };
