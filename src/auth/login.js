@@ -1,4 +1,11 @@
 const connection = require("../../utils/db");
+const jwt = require("jsonwebtoken");
+
+const secretKey = process.env.JEJAKNESIA_JWT_SECRET_KEY;
+
+function generateToken(payload) {
+  return jwt.sign(payload, secretKey, { expiresIn: "3d" });
+}
 
 const isValidEmail = (email) => {
   // Regex untuk memvalidasi format email
@@ -36,6 +43,12 @@ const loginHandler = async (request, h) => {
               .code(401);
             resolve(response);
           } else {
+            const reqPayload = {
+              email: results[0].email,
+              password: results[0].password,
+            };
+            const token = generateToken(reqPayload);
+            console.log(token);
             const response = h
               .response({
                 status: "login success",
