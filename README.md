@@ -31,42 +31,6 @@ sample data:<br>
 "category_6": "",
 "category_7": "",
 "combine_category": "Seni & Budaya, Tempat Bersejarah, Museum"
-},
-{
-"place_id": "C002",
-"place_name": "Taman Nasional Lore Lindu",
-"city": "Sulawesi Tengah",
-"address": "Dodolo, Sulawesi Tengah",
-"Lon": 120.24,
-"Lat": -1.4733,
-"desc_place": "Taman Nasional Lore Lindu merupakan salah satu taman nasional di Indonesia yang terletak di provinsi Sulawesi Tengah.",
-"price": 10000,
-"category_1": "Ruang Terbuka",
-"category_2": "Relaxing",
-"category_3": "Gunung",
-"category_4": "Hutan / Flora",
-"category_5": "Margasatwa / Fauna",
-"category_6": "",
-"category_7": "",
-"combine_category": "Ruang Terbuka, Relaxing, Gunung, Hutan / Flora, Margasatwa / Fauna"
-},
-{
-"place_id": "C003",
-"place_name": "Tana Toraja",
-"city": "Sulawesi Selatan",
-"address": "Lemo, Kec. Makale Utara, Kab. Tana Toraja",
-"Lon": 119.887,
-"Lat": -3.04892,
-"desc_place": "Lokasi ini terkenal akan budaya uniknya yang berupa ritual pemakaman warga.",
-"price": 0,
-"category_1": "Seni & Budaya",
-"category_2": "Tempat Bersejarah",
-"category_3": "Spiritual / Religi",
-"category_4": "",
-"category_5": "",
-"category_6": "",
-"category_7": "",
-"combine_category": "Seni & Budaya, Tempat Bersejarah, Spiritual / Religi"
 }
 ]
 ```
@@ -81,12 +45,15 @@ Endpoint: `/register`<br>
 Method: `POST`<br>
 Description: Register a new user.<br>
 Example:<br>
-`{
+
+```sh
+{
   "email": "adity123a@gmail.com",
   "password": "120120",
   "name": "Sujarwo",
   "id_itinerary": 1
-}`
+}
+```
 
 ### Login
 
@@ -94,7 +61,10 @@ Endpoint: `/login`<br>
 Method: `POST`<br>
 Description: Authenticate and log in a user.<br>
 Example:<br>
-`{
+
+```sh
+{
   "email": "adity123a@gmail.com",
   "password": "120120"
-}`
+}
+```
