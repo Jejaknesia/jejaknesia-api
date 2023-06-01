@@ -4,10 +4,15 @@ This documentation provides information and examples for using the Jejaknesia AP
 
 ## Base URL
 
-The base URL for all API endpoints is:
-https://jejaknesia-capstoneproject.et.r.appspot.com/
+The base URL for all API endpoints is:<br>
 
-sample data:
+```sh
+https://jejaknesia-capstoneproject.et.r.appspot.com/
+```
+
+sample data:<br>
+
+```sh
 [
 {
 "place_id": "C001",
@@ -64,6 +69,7 @@ sample data:
 "combine_category": "Seni & Budaya, Tempat Bersejarah, Spiritual / Religi"
 }
 ]
+```
 
 ## Authentication
 
@@ -71,10 +77,10 @@ To access protected endpoints, you need to include the authentication token in t
 
 ### Register
 
-Endpoint: `/register`
-Method: `POST`
-Description: Register a new user.
-Example:
+Endpoint: `/register`<br>
+Method: `POST`<br>
+Description: Register a new user.<br>
+Example:<br>
 `{
   "email": "adity123a@gmail.com",
   "password": "120120",
@@ -84,10 +90,10 @@ Example:
 
 ### Login
 
-Endpoint: `/login`
-Method: `POST`
-Description: Authenticate and log in a user.
-Example:
+Endpoint: `/login`<br>
+Method: `POST`<br>
+Description: Authenticate and log in a user.<br>
+Example:<br>
 `{
   "email": "adity123a@gmail.com",
   "password": "120120"
