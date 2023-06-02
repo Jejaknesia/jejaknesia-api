@@ -66,4 +66,3 @@ const loginHandler = async (request, h) => {
 };
 
 exports.loginHandler = loginHandler;
-
