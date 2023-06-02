@@ -7,7 +7,7 @@ This documentation provides information and examples for using the Jejaknesia AP
 The base URL for all API endpoints is:<br>
 
 ```sh
-https://jejaknesia-capstoneproject.et.r.appspot.com/
+https://jejaknesia-capstoneproject.et.r.appspot.com/api
 ```
 
 sample data:<br>
