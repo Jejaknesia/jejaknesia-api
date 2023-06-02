@@ -12,7 +12,7 @@ const loginHandler = async (request, h) => {
   if (!isValidEmail(email)) {
     return h
       .response({
-        status: "error",
+        error: true,
         message: "Invalid email format",
       })
       .code(400);
@@ -27,30 +27,38 @@ const loginHandler = async (request, h) => {
             console.error(error);
             reject(error);
           } else if (results.length === 0) {
-            // Jika tidak ada hasil dari query, artinya kombinasi email dan password tidak ditemukan
-            const response = h
-              .response({
-                status: "login failed",
-                message: "Invalid email or password",
-              })
-              .code(401);
+            const response = {
+              error: true,
+              message: "Invalid email or password",
+            };
             resolve(response);
           } else {
-            const response = h
-              .response({
-                status: "login success",
-              })
-              .code(200);
+            const user = results[0]; // Assuming the first row contains the user data
+            const response = {
+              error: false,
+              message: "Success",
+              loginResult: {
+                userId: user.id, // Adjust the property name based on your database structure
+                name: user.name, // Assuming the column name is 'name'
+              },
+            };
             resolve(response);
           }
         }
       );
     });
-    return results;
+
+    if (results.error) {
+      // User failed to login
+      return h.response(results).code(401);
+    } else {
+      // User successfully logged in
+      return h.response(results).code(200);
+    }
   } catch (error) {
     return h
       .response({
-        status: "error",
+        error: true,
         message: "Internal Server Error",
       })
       .code(500);
