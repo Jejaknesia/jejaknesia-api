@@ -2,11 +2,16 @@ const { getAllRecordsHandler } = require("./places");
 const { loginHandler } = require("./auth/login");
 const { registerHandler } = require("./auth/register");
 
+const authMiddleware = require("./middleware");
+
 const routes = [
   {
-    path: "/",
+    path: "/api",
     method: "GET",
     handler: getAllRecordsHandler,
+    options: {
+      pre: [authMiddleware],
+    },
   },
   {
     path: "/register",

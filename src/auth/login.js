@@ -48,10 +48,11 @@ const loginHandler = async (request, h) => {
               password: results[0].password,
             };
             const token = generateToken(reqPayload);
-            console.log(token);
+
             const response = h
               .response({
                 status: "login success",
+                token: token,
               })
               .code(200);
             resolve(response);
