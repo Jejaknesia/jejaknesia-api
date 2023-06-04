@@ -34,19 +34,15 @@ const registerHandler = async (request, h) => {
         `INSERT INTO users (email, password) VALUES ('${email}', '${password}')`,
         (error, results, fields) => {
           if (error) {
-            console.error(error);
             if (error.code === "ER_DUP_ENTRY") {
-              return reject({
-                status: "error",
-                message: "Email is already registered",
-              });
+              const errorMessage = "Email already registered";
+              reject(new Error(errorMessage));
+            } else {
+              reject(error);
             }
-            return reject({
-              status: "error",
-              message: "Internal Server Error",
-            });
+          } else {
+            resolve(results);
           }
-          resolve(results);
         }
       );
     });
