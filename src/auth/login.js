@@ -1,4 +1,7 @@
+const jwt = require("jsonwebtoken");
 const connection = require("../../utils/db");
+
+const secretKey = process.env.JEJAKNESIA_JWT_SECRET_KEY;
 
 const isValidEmail = (email) => {
   // Regex untuk memvalidasi format email
@@ -34,12 +37,21 @@ const loginHandler = async (request, h) => {
             resolve(response);
           } else {
             const user = results[0]; // Assuming the first row contains the user data
+
+            // Generate token
+            const token = jwt.sign(
+              { userId: user.id, name: user.name },
+              secretKey,
+              { expiresIn: "1h" } // Set token expiration time as desired
+            );
+
             const response = {
               error: false,
               message: "Success",
               loginResult: {
-                userId: user.id, // Adjust the property name based on your database structure
-                name: user.name, // Assuming the column name is 'name'
+                userId: user.id,
+                name: user.name,
+                token: token, // Include the generated token in the response
               },
             };
             resolve(response);
