@@ -8,7 +8,7 @@ const isValidEmail = (email) => {
 
 // REGISTER
 const registerHandler = async (request, h) => {
-  const { email, password } = request.payload;
+  const { name, email, password } = request.payload;
 
   if (!email || !password) {
     return h
@@ -31,7 +31,7 @@ const registerHandler = async (request, h) => {
   try {
     await new Promise((resolve, reject) => {
       connection.query(
-        `INSERT INTO users (email, password) VALUES ('${email}', '${password}')`,
+        `INSERT INTO users (name, email, password) VALUES ('${name}', '${email}', '${password}')`,
         (error, results, fields) => {
           if (error) {
             if (error.code === "ER_DUP_ENTRY") {
