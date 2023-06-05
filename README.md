@@ -68,3 +68,9 @@ Example:<br>
   "password": "120120"
 }
 ```
+
+### Blogs
+
+Endpoint: `api/blogs`<br>
+Method: `GET`<br>
+Description: blogs<br>
