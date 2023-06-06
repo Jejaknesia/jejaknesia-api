@@ -74,3 +74,9 @@ Example:<br>
 Endpoint: `api/blogs`<br>
 Method: `GET`<br>
 Description: blogs<br>
+
+### Get Blog By Id
+
+Endpoint: `api/blogs/{id}`<br>
+Method: `GET`<br>
+Description: replace {id} with blog_id for example<br>
