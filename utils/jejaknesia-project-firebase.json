@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "jejaknesia-project",
+  "private_key_id": "53bd0083acc6c2b607bc63fe5892c4fd091dd38f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCuMTHEm6urUwiR\nSpGlMZAaF2VPGXUm6zlEDUB62//qOyZW5eeXneWdz4fXh35OZXz61nRAA8+lCLcJ\nDG1n4kLvehdM4OSVy25SN8SyEUkwAOzDlUJb4x8nIJp8AFkCc88Tk+ZCJO+2XF71\nUJGPB/WBVV9NtQAeVW5dX39G+/Iwcu0S23RLVtqixUjaiXRyVBPXes7vw6115UL+\nrAdWdxC+D+t78eWYRhbngT0WZ8rpQy6I+l+/mwYQzyDA2ug2wRbmqYKfdlqiWwCy\n5DQasZsjMBxSPZkMkk40vPaaFyAB/lp+mZ9ilVcwmbnrw1Zk1bSStdRo24f7sK1A\nGEmh6vVdAgMBAAECggEAVxWJB/27aT9tvRVGkwugOysPHuhfRUG7s2Xcoo9x9av0\nkuUFTytFLAwgoYO/hXn/bXfhTk+Zc6xTtVZdK95WEFs9YtXb8Xdug/QVheBWcoVD\n2NO6BS4a2PjXwr55wVwcXnFGYDMPFGBBqOrKmnMkLbB8oOCoWoHjVxLzEo3KmqVG\nKDSGC7fXtxdHeUDjV6hDHHF8dMG8rKHYiMdltA1aY/DL22CMBOuX0jp01WS2f/Fm\n6CzHXG7jWULw6bgxPl5cP9906nVPSCxECKmPJ+onJ8LhxUEoBS0ggoXSN0KwMeOM\nB8+8N7kj1yyBvWihWA7QicdNeoImxcXGaXmVEoAYkQKBgQDmSTePTYLGsj9TGP9l\ntqitF/35znrTtQ7BGGZcd9naN/Zd1dk2xjBptZ8J0eyZq4ZjpMpw+zpRLJeZkdgP\n09u+qNBnkwDsCBR524NR6q72xRxbrkEJiR1nwwP0Tp751b85dkchOSTesUhmgzJM\nX6n+i0fvxqHrIu1AMdGjrzSqRwKBgQDBpIVfiSyn10cuqkCbPvhLnTqRQq2CCVu7\nutRyXfMUUnGQzdkeCqA4CpRqtoOpuDDQ0Tf38j2kO2WsRtlhKgxcOYGOvD55Z6XZ\naBo4V8FELz4252jQWNFF9Wh2TO5i9P3rJ+vy5iunOCZoPWLzExPUFy60JRZxL40K\n/LYcVj8ROwKBgQDN4BsZtDP8KxLN2YVKi5gU12QpVl0cs7tzCbtJY6SRoIJStYIx\no9FYUBTUlKYvY9cLciHCC/fA5lrJ4kcFL2Q++XEHh7bFTRvxLTwjmem9l86YcBqY\nycpOH1yDp14dAOiqGIHSw+GgbWHKs/Pdr5CsjhxL0oqjSmBMib1f1p0AtQKBgQCy\nk5yD7CcIadm1SUDnanzkjozyZQFJyIOWbsd46PdAqH8ewRcXQ0laJTeV6dcl7zzl\ndewddoIuMLCk3Xmex346lrXKAgPDRjiGdCCqEROkY8UGMQZSDXaBA75gSrYVAEYi\nVOCdUnKzdW7F9saHz/IbR33El+dIXke9+Cuhmk/y/QKBgE+mfHxj6KVTR7GCr5PB\n+7P3XoE0KDt6zbhF/mbq2IEQDC/MP2/VVbsGeufOlGHEgR9d+HItTZwTyv4Cx1GK\nfsoJn2dPqRtmABFZgaxg6DMcsXxkErQ462vih5KERdxom6GFpCPy0kKJk/RKKG/O\n1KhJ27TVbF0SXg8Q16VRxEND\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-facdt@jejaknesia-project.iam.gserviceaccount.com",
+  "client_id": "100706403250316343195",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-facdt%40jejaknesia-project.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
