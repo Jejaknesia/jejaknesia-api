@@ -11,7 +11,7 @@ const { signInCallback } = require("./auth/provider/callback");
 const { getAllBlogs } = require("./blogs");
 const { getBlogById } = require("./blogs/blogDetail");
 // model
-// const { predictRating } = require("./models/predict");
+const { predictHandler } = require("./models/predict");
 
 const routes = [
   {
@@ -58,20 +58,11 @@ const routes = [
     path: "/auth/google/callback",
     handler: signInCallback,
   },
-  // {
-  //   method: "POST",
-  //   path: "/api/predict",
-  //   handler: async (request, h) => {
-  //     try {
-  //       const { userId, tourismId } = request.payload;
-  //       const rating = await predictRating(userId, tourismId);
-  //       return rating;
-  //     } catch (error) {
-  //       console.error(error);
-  //       return "Internal Server Error";
-  //     }
-  //   },
-  // },
+  {
+    path: "/api/predict",
+    method: "POST",
+    handler: predictHandler,
+  },
 ];
 
 module.exports = routes;

@@ -1,42 +1,44 @@
-// const tf = require("@tensorflow/tfjs-node");
-// const h5 = require("h5");
+const Wreck = require("@hapi/wreck");
+const connection = require("../../../utils/db");
 
-// // Function to load the model
-// async function loadModel() {
-//   const modelPath = "./src/models/recommendation_rating_model.h5";
+const predictHandler = async (request, h) => {
+  try {
+    const { res, payload } = await Wreck.post(
+      "https://jejaknesia-models-kwhslxrasa-et.a.run.app/predict_text",
+      {
+        payload: JSON.stringify({
+          text: request.payload.text,
+        }),
+      }
+    );
 
-//   // Load the model architecture and weights
-//   const model = await tf.loadLayersModel(`file://${modelPath}`, {
-//     customObjects: {
-//       // Define custom objects if needed
-//     },
-//     strict: false, // Set to false to allow loading model with different architecture
-//   });
+    const responseData = JSON.parse(payload.toString());
 
-//   return model;
-// }
+    const objectData = await Promise.all(
+      responseData.map((data) => {
+        const quota = data.toString();
+        return new Promise((resolve, reject) => {
+          connection.query(
+            `SELECT * FROM tourism WHERE place_name LIKE '%${quota}%'`,
+            (error, results, fields) => {
+              if (error) {
+                console.error(error);
+                reject(error);
+              } else {
+                resolve(results);
+              }
+            }
+          );
+        });
+      })
+    );
 
-// // Function to perform prediction using the loaded model
-// async function predictRating(userId, tourismId) {
-//   try {
-//     // Load the model
-//     const model = await loadModel();
+    // Return the results as the response
+    return h.response(objectData);
+  } catch (error) {
+    console.error(error);
+    return h.response("Terjadi kesalahan").code(500);
+  }
+};
 
-//     // Preprocess the input data
-//     const userIdTensor = tf.tensor2d([[userId]]);
-//     const tourismIdTensor = tf.tensor2d([[tourismId]]);
-
-//     // Perform prediction
-//     const prediction = model.predict([userIdTensor, tourismIdTensor]);
-
-//     // Get the prediction result
-//     const rating = prediction.dataSync()[0];
-
-//     return rating;
-//   } catch (error) {
-//     console.error(error);
-//     return "Internal Server Error";
-//   }
-// }
-
-// exports.predictRating = predictRating;
+exports.predictHandler = predictHandler;
