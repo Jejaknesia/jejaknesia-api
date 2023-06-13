@@ -4,10 +4,10 @@ const connection = require("../../../utils/db");
 const predictHandler = async (request, h) => {
   try {
     const { res, payload } = await Wreck.post(
-      "https://jejaknesia-models-kwhslxrasa-et.a.run.app/predict_text",
+      "https://jejaknesia-api-models-kwhslxrasa-et.a.run.app/predict_place",
       {
         payload: JSON.stringify({
-          text: request.payload.text,
+          data: request.payload.data,
         }),
       }
     );
@@ -15,7 +15,7 @@ const predictHandler = async (request, h) => {
     const responseData = JSON.parse(payload.toString());
 
     const objectData = await Promise.all(
-      responseData.map((data) => {
+      responseData.result.map((data) => {
         const quota = data.toString();
         return new Promise((resolve, reject) => {
           connection.query(
@@ -35,6 +35,8 @@ const predictHandler = async (request, h) => {
 
     // Return the results as the response
     return h.response({
+      status: responseData.status,
+      error: responseData.error,
       data: objectData,
     });
   } catch (error) {
