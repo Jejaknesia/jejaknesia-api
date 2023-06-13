@@ -37,7 +37,7 @@ const predictHandler = async (request, h) => {
     return h.response({
       status: responseData.status,
       error: responseData.error,
-      data: objectData,
+      data: [].concat.apply([], objectData),
     });
   } catch (error) {
     console.error(error);
