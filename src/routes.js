@@ -55,8 +55,8 @@ const routes = [
     handler: signInWithGoogle,
   },
   {
-    method: "GET",
     path: "/auth/google/callback",
+    method: "GET",
     handler: signInCallback,
   },
   {
