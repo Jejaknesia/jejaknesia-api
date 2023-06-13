@@ -1,14 +1,14 @@
 const Wreck = require("@hapi/wreck");
 const connection = require("../../../utils/db");
 
-const predictHandler = async (request, h) => {
+const manyPredictHandler = async (request, h) => {
   try {
+    const userInput = request.payload.text; // Assuming the user input is provided in the "text" field
+    console.log(userInput);
     const { res, payload } = await Wreck.post(
-      "https://jejaknesia-models-kwhslxrasa-et.a.run.app/predict_text",
+      "https://jejaknesia-models-kwhslxrasa-et.a.run.app/predict_text2",
       {
-        payload: JSON.stringify({
-          text: request.payload.text,
-        }),
+        payload: JSON.stringify([userInput]), // Wrap the user input in an array
       }
     );
 
@@ -43,4 +43,4 @@ const predictHandler = async (request, h) => {
   }
 };
 
-exports.predictHandler = predictHandler;
+exports.manyPredictHandler = manyPredictHandler;

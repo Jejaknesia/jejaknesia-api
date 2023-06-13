@@ -12,6 +12,7 @@ const { getAllBlogs } = require("./blogs");
 const { getBlogById } = require("./blogs/blogDetail");
 // model
 const { predictHandler } = require("./models/predict");
+const { manyPredictHandler } = require("./models/predict/manyPredict");
 
 const routes = [
   {
@@ -62,6 +63,11 @@ const routes = [
     path: "/api/predict",
     method: "POST",
     handler: predictHandler,
+  },
+  {
+    path: "/api/predict2",
+    method: "POST",
+    handler: manyPredictHandler,
   },
 ];
 

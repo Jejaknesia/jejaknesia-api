@@ -3,7 +3,7 @@ const connection = require("../../utils/db");
 const getAllRecordsHandler = async (request, h) => {
   try {
     const results = await new Promise((resolve, reject) => {
-      connection.query("SELECT * FROM tourism", (error, results, fields) => {
+      connection.query("SELECT * FROM places", (error, results, fields) => {
         if (error) {
           console.error(error);
           reject(error);
