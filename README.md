@@ -80,3 +80,15 @@ Description: blogs<br>
 Endpoint: `api/blogs/{id}`<br>
 Method: `GET`<br>
 Description: replace {id} with blog_id for example<br>
+
+### Predict
+
+Endpoint: `api/predict`<br>
+Method: `POST`<br>
+Description: This endpoint allows you to make predictions using the prediction model.<br>
+
+```sh
+{
+  "data":"Museum"
+}
+```
