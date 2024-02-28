@@ -19,6 +19,10 @@
     "firebase": "^9.22.1",
     "firebase-admin": "^11.9.0",
     "google-auth-library": "^8.8.0",
+<<<<<<< HEAD
+=======
+    "h5": "^0.0.5",
+>>>>>>> 97cf192d2974259264bf870ebd029144a3c6adb3
     "hapi-auth-firebase": "^1.0.4",
     "jsonwebtoken": "^9.0.0",
     "mysql": "^2.18.1",
