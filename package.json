@@ -11,8 +11,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@aditya_arga/chalkconsole": "^1.0.8",
     "@hapi/hapi": "^21.3.2",
+    "@tensorflow/tfjs-converter": "^4.7.0",
+    "@tensorflow/tfjs-node": "^4.7.0",
     "dotenv": "^16.1.2",
+    "firebase": "^9.22.1",
+    "firebase-admin": "^11.9.0",
+    "google-auth-library": "^8.8.0",
+    "hapi-auth-firebase": "^1.0.4",
     "jsonwebtoken": "^9.0.0",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.22"

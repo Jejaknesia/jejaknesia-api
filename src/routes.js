@@ -3,7 +3,11 @@ const { getAllRecordsHandler } = require("./places");
 const { loginHandler } = require("./auth/login");
 const { registerHandler } = require("./auth/register");
 const authMiddleware = require("./middleware");
-//
+
+// provider
+const { signInWithGoogle } = require("./auth/provider/signInWithGoogle");
+const { signInCallback } = require("./auth/provider/callback");
+//blogs
 const { getAllBlogs } = require("./blogs");
 const { getBlogById } = require("./blogs/blogDetail");
 
@@ -41,6 +45,16 @@ const routes = [
     path: "/login",
     method: "POST",
     handler: loginHandler,
+  },
+  {
+    path: "/auth/google",
+    method: "GET",
+    handler: signInWithGoogle,
+  },
+  {
+    method: "GET",
+    path: "/auth/google/callback",
+    handler: signInCallback,
   },
 ];
 
